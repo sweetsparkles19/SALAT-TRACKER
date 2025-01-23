@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Pemantau Waktu Salat</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Jadwal Waktu Salat</h1>
+            <p>Temukan jadwal salat akurat sesuai lokasi Anda</p>
+        </div>
+        <img src="{{ url_for('static', filename='kaaba.png') }}" alt="Kakbah" class="kaaba-image">
+    </header>
+    <main>
+        <section class="location-section">
+            <h2>Pilih Lokasi</h2>
+            <div id="location-input">
+                <label for="manual-location">Masukkan Lokasi Manual (Opsional):</label>
+                <input type="text" id="manual-location" placeholder="Contoh: Jakarta, Indonesia">
+                <button id="fetch-manual">Cari</button>
+            </div>
+            <div id="location-auto">
+                <button id="detect-location">Deteksi Lokasi Otomatis</button>
+            </div>
+        </section>
+        <section id="prayer-times" class="prayer-times-section">
+            <h2>Jadwal Salat</h2>
+            <ul id="prayer-list">
+                <!-- Jadwal salat akan diisi di sini -->
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>© 2025 Web Pemantau Waktu Salat | Dibuat dengan <span style="color: red;">❤</span></p>
+    </footer>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
